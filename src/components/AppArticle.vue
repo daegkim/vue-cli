@@ -11,7 +11,7 @@ export default {
   name: 'AppArticle',
   data: function() {
     return {
-      list: ['john', 'mike', 'kate']
+      list: ['john', 'mike', 'kate', 'david']
     }
   },
   methods: {
