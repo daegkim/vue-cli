@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='app-header'>
     <h1>{{ msg }}</h1>
     <p>{{ welcomeMsg }}</p>
   </div>
@@ -19,5 +19,16 @@ export default {
 </script>
 
 <style>
+#app-header {
+  display: table;
+  width: 30%;
+}
 
+#app-header > h1, p {
+  display: table-cell;
+}
+
+#app-header > p {
+  text-align: right;
+}
 </style>
