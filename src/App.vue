@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-header v-bind:msg='title' v-bind:user='user'/>
+    <clock/>
+    <app-article v-on:setUser='setUser'/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Clock from './components/Clock.vue'
+import AppHeader from './components/AppHeader.vue'
+import AppArticle from './components/AppArticle.vue'
 
 export default {
   name: 'App',
+  data: function() {
+    return {
+      title: 'My Vue',
+      user: ''
+    }
+  },
   components: {
-    HelloWorld
+    Clock: Clock,
+    AppHeader: AppHeader,
+    AppArticle: AppArticle
+  },
+  methods: {
+    setUser: function(arg) {
+      this.user = arg.user
+    }
   }
 }
 </script>
@@ -21,8 +37,8 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /*text-align: center;*/
   color: #2c3e50;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
 </style>
